@@ -1,7 +1,7 @@
 import React from 'react';
 import user from '../Images/user.jpeg';
 const ContactCard=(props)=>{// destructuring
-    const {name,email}=props.contact;
+    const {id,name,email}=props.contact;
     return(
           
         <div className="item">
@@ -10,7 +10,8 @@ const ContactCard=(props)=>{// destructuring
             <div className="header">{name}</div>
             <div>{email}</div>
         </div>
-        <i className="trash alternate outline icon" style={{color:'red',margin:'7px',position:"fixed"}} ></i>
+        <i className="trash alternate outline icon" style={{color:'red',margin:'7px',position:"fixed"}} onClick={()=>{
+            props.clickHandler(id)}}></i>
     </div>
     )
 }
