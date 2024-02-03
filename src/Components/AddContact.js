@@ -13,7 +13,7 @@ class  AddContact extends React.Component{
         }
         console.log('ddd',this.state)
         this.props.addContactHandler(this.state)
-        // this.setState({name:"",email:""})//delete the name and email contents
+        this.setState({name:"",email:""})//delete the name and email contents
 
     }
     render(){//the new state after null state will be this state which will get rendered on the App component
