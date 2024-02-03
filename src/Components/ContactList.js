@@ -7,7 +7,7 @@ const ContactList=(props)=>{
 
     }
     //To render it to the App Component inside the ContactList component
-    const renderContactList=props.contacts.map((contact)=> {//contact attribute is a list of every single record of array in Contacts 
+    const renderContactList=contacts.map((contact)=> {//contact attribute is a list of every single record of array in Contacts 
         return(
           
            <ContactCard contact={contact} clickHandler={deleteContactHandler} />
