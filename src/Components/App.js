@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'; //hooks 
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import AddContact from './AddContact';
 import ContactList from './ContactList';
@@ -35,24 +34,16 @@ function App() {
 
   return (
     <div className='ui container'>
-      <Router>
-      <Header />
- 
-      <Routes>
-      
-      <Route path='/' Component={ContactList}/>
-      <Route path='/add' Component={AddContact}/>
-      </Routes>
       
       
       
       
-
-      {/*<AddContact addContactHandler={addContactHandler} />*/}{/*Here the content from child is called into parent*/}
-      {/*<ContactList contacts={Contacts} getContactId={removeContactHandler} />*/}{/*here the state is being changed and transfered from parent to child*/}
+      <Header/>
+      <AddContact addContactHandler={addContactHandler} />{/*Here the content from child is called into parent*/}
+      <ContactList contacts={Contacts} getContactId={removeContactHandler} />{/*here the state is being changed and transfered from parent to child*/}
       {/*The props i.e, property of ContactList*/}
 
-      </Router>
+  
       
 
     </div>
