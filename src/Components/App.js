@@ -37,10 +37,15 @@ function App() {
     <div className='ui container'>
       <Router>
       <Header />
+ 
       <Routes>
-      <Route path='/add' Component={AddContact}/>
+      
       <Route path='/' Component={ContactList}/>
+      <Route path='/add' Component={AddContact}/>
       </Routes>
+      
+      
+      
       
 
       {/*<AddContact addContactHandler={addContactHandler} />*/}{/*Here the content from child is called into parent*/}
