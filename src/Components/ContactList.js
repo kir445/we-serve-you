@@ -6,6 +6,11 @@ const ContactList=(props)=>{
         props.getContactid(id)
 
     }
+    const contacts=[{
+        "id":"1",
+        "name":"Keerti",
+        "email":"Keerti@gmail.com"
+    }]
     //To render it to the App Component inside the ContactList component
     const renderContactList=contacts.map((contact)=> {//contact attribute is a list of every single record of array in Contacts 
         return(
