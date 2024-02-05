@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'; //hooks 
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { uuid } from "uuidv4";
+import { v4 as uuid } from "uuid";
 import AddContact from './AddContact';
+import ContactDeets from './ContactDeets';
 import ContactList from './ContactList';
 import Header from './Header';
 //use state is a hook used to manipulate state when some data is being fetched from a server
@@ -35,16 +36,17 @@ function App() {
     <div className='ui container'>
       <Router>
         <Routes>
-          <Route path ="/add" Component={AddContact}/>
-          <Route path ="/" Component={ContactList}/>
+          <Route path ="/add" Component={()=><AddContact addContactHandler={addContactHandler}/>}/>
+          <Route path ="/"  Component={()=>
+              <ContactList
+                contacts={Contacts}
+                getContactid={removeContactHandler}/>}/>
+            <Route path='/contact/:id' Component={()=><ContactDeets/>}/>
 
         </Routes>
       </Router>
       <Header />
-      {/*<AddContact addContactHandler={addContactHandler} />*/}{/*Here the content from child is called into parent*/}
-       {/*<ContactList contacts={Contacts} getContactId={removeContactHandler} />*/}{/*here the state is being changed and transfered from parent to child*/}
-      {/*The props i.e, property of ContactList*/}
-
+      
     </div>
   );
 }
